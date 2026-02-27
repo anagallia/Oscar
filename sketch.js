@@ -68,10 +68,10 @@ const hints = [
 
 const answers = [
   ["abuelo", "david", "abuelo david", "mi abuelo david", "mi abuelo"],
-  ["globo", "bomba"],
-  ["aldeano"],
+  ["globo", "bomba", "un globo", "una bomba"],
+  ["aldeano", "aldeana", "un aldeano"],
   ["cali pachanguero"],
-  ["terreneitor"],
+  ["terreneitor", "terrenator"],
   ["infinito"],
   ["distancia", "la distancia"]
 ];
@@ -227,13 +227,11 @@ function draw() {
     finalDiv.position(x, y);
     finalDiv.size(w, h);
     
-    // ✅ Igualar tipografía del div con la del canvas
+    // Igualar tipografía del div con la del canvas
 finalDiv.style("font-size", `${baseFontSize}px`);
 finalDiv.style("line-height", `${baseFontSize * 1.6}px`);
 
     // Mantener typewriter, pero SIN romper el scroll:
-    // - solo actualiza si cambió el contenido
-    // - preserva scrollTop
     const typedHtml = escapeHtml(getTypedText()).replaceAll("\n", "<br>");
 
     if (typedHtml !== lastFinalHtml) {
@@ -323,7 +321,7 @@ function enterIntro() {
   hintAlpha = 0;
   lastFinalHtml = "";
   twFull =
-    "Hola amor\n" +
+    "Hola mi amor\n" +
     "Como sé que te gustan los juegos, te preparé un pequeño reto de adivinanzas.\n" +
     "Sé que eres muy listo y podrás descifrarlo.\n\n" +
     "¡Te amo!";
